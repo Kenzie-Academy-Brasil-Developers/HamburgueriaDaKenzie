@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import ProductList from './components/ProductsList'
 import Product from './components/Product';
+import Cart from './components/Cart';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -32,6 +33,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <ProductList products={products} handleClick={handleClick}/>
+        <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
       </header>
     </div>
   );

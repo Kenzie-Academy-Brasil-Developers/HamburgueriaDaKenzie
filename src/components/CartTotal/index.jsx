@@ -7,10 +7,12 @@ function CartTotal({currentSale}){
             <p>Total</p>
             <span>
                 R$ {currentSale.reduce((acc, cur) => {
-                    return acc + cur.price
+                    return acc+cur.price
                 }, 0)}
             </span>
         </div>
     )
 
 }
+
+export default CartTotal
