@@ -6,12 +6,19 @@ function Cart({ currentSale, setCurrentSale }) {
     setCurrentSale([]);
   }
 
+  function removeProduct(productToRemove){
+    let newCurrentSale = currentSale.filter(product => {
+      return product !== productToRemove
+    })
+    setCurrentSale(newCurrentSale)
+  }
+
   return (
     <>
       <div>Carrinho de compras</div>
       <div>
         {currentSale.map((product) => {
-          <CartProduct key={product.id} product={product} />;
+          return <CartProduct key={product.id} product={product} removeProduct={removeProduct}/>;
         })}
       </div>
       <CartTotal currentSale={currentSale} />
