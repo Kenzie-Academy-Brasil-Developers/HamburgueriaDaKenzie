@@ -1,15 +1,13 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import ProductList from './components/ProductsList'
-import Product from './components/Product';
 import Cart from './components/Cart';
 import Header from './components/Header';
+import {GlobalStyle} from './globalStyles'
 
 function App() {
   const [products, setProducts] = useState([])
-  const [filteredProducts, setFilteredProducts] = useState([])
   const [currentSale, setCurrentSale] = useState([])
-  const [cartTotal, setCartTotal] = useState(0)
 
 
   useEffect(() => {
@@ -35,9 +33,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <GlobalStyle />
         <Header showProducts={showProducts}/>
-        <ProductList products={products} handleClick={handleClick}/>
-        <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+        <main className='mainContainer'>
+          <ProductList products={products} handleClick={handleClick}/>
+          <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+        </main>
       </header>
     </div>
   );

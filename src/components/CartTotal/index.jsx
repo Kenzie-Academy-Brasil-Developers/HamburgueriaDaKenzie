@@ -1,9 +1,8 @@
-
+import {TotalContainer} from './styled'
 
 function CartTotal({currentSale}){
-
     return(
-        <div>
+        <TotalContainer>
             <p>Total</p>
             <span>
                 R$ {currentSale.reduce((acc, cur) => {
@@ -12,9 +11,8 @@ function CartTotal({currentSale}){
                     return newTotal
                 }, 0)},00
             </span>
-        </div>
+        </TotalContainer>
     )
-
 }
 
 export default CartTotal

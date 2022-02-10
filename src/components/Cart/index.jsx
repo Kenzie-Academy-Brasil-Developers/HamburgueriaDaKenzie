@@ -1,5 +1,11 @@
 import CartTotal from "../CartTotal";
 import CartProduct from "../CartProducts";
+import {
+  StldCartEmpty,
+  StldCartWithProducts,
+  StldCartProductsContainer,
+  StldContainerTotal
+} from "./styled";
 
 function Cart({ currentSale, setCurrentSale }) {
   function removeAll() {
@@ -14,9 +20,11 @@ function Cart({ currentSale, setCurrentSale }) {
   }
 
   return currentSale.length > 0 ? (
-    <>
-      <div>Carrinho de compras</div>
-      <div>
+    <StldCartWithProducts>
+      <div className="cartHeader">
+        <p>Carrinho de compras</p>
+      </div>
+      <StldCartProductsContainer>
         {currentSale.map((product) => {
           return (
             <CartProduct
@@ -26,20 +34,22 @@ function Cart({ currentSale, setCurrentSale }) {
             />
           );
         })}
-      </div>
-      <CartTotal currentSale={currentSale} />
-      <button onClick={() => removeAll()}>Remover todos</button>
-    </>
+      </StldCartProductsContainer>
+      <StldContainerTotal>
+        <CartTotal currentSale={currentSale} />
+        <button onClick={() => removeAll()}>Remover todos</button>
+      </StldContainerTotal>
+    </StldCartWithProducts>
   ) : (
-    <>
-      <div>
+    <StldCartEmpty>
+      <div className="cartHeader">
         <p>Carrinho de compras</p>
       </div>
-      <div>
+      <div className="cartBody">
         <p>Sua sacola está vazia</p>
         <span>Adicione itens</span>
       </div>
-    </>
+    </StldCartEmpty>
   );
 }
 

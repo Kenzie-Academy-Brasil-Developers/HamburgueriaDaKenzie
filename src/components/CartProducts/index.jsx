@@ -1,6 +1,8 @@
+import {StldProductCart} from './styled'
+
 function CartProduct({ product, removeProduct }) {
   return (
-    <>
+    <StldProductCart>
       <figure>
         <img src={product.img} alt={product.name} />
         <figcaption>{product.name}</figcaption>
@@ -9,8 +11,10 @@ function CartProduct({ product, removeProduct }) {
           <p>{product.name}</p>
           <span>{product.category}</span>
       </div>
-      <button onClick={() => removeProduct(product)}>Remover</button>
-    </>
+      <button onClick={() => removeProduct(product)}>
+        <p>Remover</p>
+      </button>
+    </StldProductCart>
   );
 }
 

@@ -1,0 +1,18 @@
+.divContainer {
+    display: flex;
+    overflow-x: scroll;
+    min-width: 320px;
+    margin-left: 16px;
+}
+.divContainer::-webkit-scrollbar {
+   display: none;
+}
+
+@media screen and (min-width: 1020px) {
+    .divContainer {
+        display: flex;
+        overflow-x: hidden;
+        flex-wrap: wrap;
+        
+    }
+}
