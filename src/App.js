@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import ProductList from './components/ProductsList'
 import Product from './components/Product';
 import Cart from './components/Cart';
+import Header from './components/Header';
 
 function App() {
   const [products, setProducts] = useState([])
@@ -18,8 +19,11 @@ function App() {
     .catch(err => console.log(err))
   }, [])
 
-  function showProducts(){
-
+  function showProducts(inputValue){
+    const newProducts = products.filter(productFiltered => {
+      return productFiltered.category === inputValue
+    })
+    setProducts(newProducts)
   }
 
   function handleClick(productId){
@@ -27,11 +31,11 @@ function App() {
       setCurrentSale([...currentSale, productId])
     }
   }
-  console.log(currentSale)
 
   return (
     <div className="App">
       <header className="App-header">
+        <Header showProducts={showProducts}/>
         <ProductList products={products} handleClick={handleClick}/>
         <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
       </header>
