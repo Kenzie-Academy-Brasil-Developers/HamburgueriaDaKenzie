@@ -14,7 +14,7 @@ export const StldCartWithProducts = styled.div`
     border-radius: 10px 10px 0px 0px;
     display: flex;
     align-items: center;
-    width: 330px;
+    width: 300px;
     height: 65px;
     background-color: rgba(39, 174, 96, 1);
   }
@@ -39,7 +39,7 @@ export const StldCartEmpty = styled.div`
     border-radius: 10px 10px 0px 0px;
     display: flex;
     align-items: center;
-    width: 330px;
+    width: 300px;
     height: 65px;
     background-color: rgba(39, 174, 96, 1);
   }
@@ -51,7 +51,7 @@ export const StldCartEmpty = styled.div`
     font-weight: 700;
   }
   .cartBody {
-      width: 330px;
+      width: 300px;
       background-color: rgba(245, 245, 245, 1);
       display: flex;
       flex-direction: column;
@@ -70,12 +70,13 @@ export const StldCartEmpty = styled.div`
       font-size: 14px;
       color: rgba(130, 130, 130, 1);
   }
+
 `;
 
 export const StldCartProductsContainer = styled.div`
     height: 360px;
     overflow-x: scroll;
-    max-height: 330px;
+    max-height: 300px;
     background-color: rgba(245, 245, 245, 1);
     ::-webkit-scrollbar {
         display: none;
@@ -83,7 +84,7 @@ export const StldCartProductsContainer = styled.div`
 `
 
 export const StldContainerTotal = styled.div`
-    width: 330px;
+    width: 300px;
     height: 150px;
     background-color: rgba(245, 245, 245, 1);
     display: flex;
@@ -95,7 +96,7 @@ export const StldContainerTotal = styled.div`
     button {
       cursor: pointer;
       margin-top: 30px;
-      width: 265px;
+      width: 235px;
       height: 50px;
       background-color: rgba(224, 224, 224, 1);
       border: none;

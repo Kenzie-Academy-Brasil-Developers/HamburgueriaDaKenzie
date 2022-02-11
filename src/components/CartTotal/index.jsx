@@ -5,11 +5,7 @@ function CartTotal({currentSale}){
         <TotalContainer>
             <p>Total</p>
             <span>
-                R$ {currentSale.reduce((acc, cur) => {
-                    let total = acc+cur.price
-                    let newTotal = Math.round(total, -1)
-                    return newTotal
-                }, 0)},00
+                R$ {currentSale.reduce((acc, cur) => acc = acc + cur.price, 0).toFixed(2)}
             </span>
         </TotalContainer>
     )

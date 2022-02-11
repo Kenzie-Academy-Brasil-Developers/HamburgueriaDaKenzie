@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StldProductCart = styled.div`
   display: flex;
   margin-top: 20px;
-  max-width: 330px;
+  max-width: 300px;
   width: 330px;
   figure {
       display: flex;

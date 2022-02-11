@@ -1,6 +1,7 @@
 import { StldContainer } from "./styled";
 
 function Product({ product, handleClick }) {
+  console.log(product)
   return (
     <StldContainer>
       <figure>
@@ -9,10 +10,11 @@ function Product({ product, handleClick }) {
       <div>
         <h3>{product.name}</h3>
         <span>{product.category}</span>
-        <span className="price">R$ {product.price},00</span>
+        <span className="price">R$ {String(product.price.toFixed(2)).replace('.', ',')}</span>
         <button onClick={() => handleClick(product)}>Adicionar</button>
       </div>
     </StldContainer>
+   
   );
 }
 

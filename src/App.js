@@ -8,6 +8,7 @@ import {GlobalStyle} from './globalStyles'
 function App() {
   const [products, setProducts] = useState([])
   const [currentSale, setCurrentSale] = useState([])
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
 
   useEffect(() => {
@@ -18,11 +19,12 @@ function App() {
   }, [])
 
   function showProducts(inputValue){
-    const newProducts = products.filter(productFiltered => {
-      return productFiltered.category === inputValue
+    const newFilteredProducts = products.filter(productFiltered => {
+      return productFiltered.category.toLowerCase().includes(inputValue.toLowerCase())
     })
-    setProducts(newProducts)
+    setFilteredProducts(newFilteredProducts)
   }
+
 
   function handleClick(productId){
     if(!currentSale.includes(productId)){
@@ -36,7 +38,7 @@ function App() {
         <GlobalStyle />
         <Header showProducts={showProducts}/>
         <main className='mainContainer'>
-          <ProductList products={products} handleClick={handleClick}/>
+          <ProductList products={filteredProducts.length > 0 ? filteredProducts : products} handleClick={handleClick}/>
           <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
         </main>
       </header>

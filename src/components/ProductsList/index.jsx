@@ -2,7 +2,7 @@ import "./styles.css";
 import Product from "../Product";
 
 
-function ProductList({ products, handleClick }) {
+function ProductList({products, handleClick}) {
   return (
     <div className="divContainer">
       {products.map((product) => {

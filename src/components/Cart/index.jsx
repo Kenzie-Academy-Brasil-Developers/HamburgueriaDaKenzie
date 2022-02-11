@@ -4,7 +4,7 @@ import {
   StldCartEmpty,
   StldCartWithProducts,
   StldCartProductsContainer,
-  StldContainerTotal
+  StldContainerTotal,
 } from "./styled";
 
 function Cart({ currentSale, setCurrentSale }) {

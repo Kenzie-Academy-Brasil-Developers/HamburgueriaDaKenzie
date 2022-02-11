@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TotalContainer = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 330px;
+    width: 300px;
     border-width: 330px;
     border-top: 2px solid rgba(189, 189, 189, 1);
     p {

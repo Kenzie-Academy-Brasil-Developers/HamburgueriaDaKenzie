@@ -11,13 +11,14 @@ export const StldHeader = styled.header`
   @media screen and (min-width: 720px) {
       flex-direction: row;
       justify-content: space-around;
+      height: 80px;
   }
     figure img {
         width: 158.94px;
         height: 36.83px;
     }
     input {
-        border: none;
+        border: 2px solid rgba(224, 224, 224, 1);
         border-radius: 8px;
         width: 300px;
         height: 50px;
@@ -47,4 +48,5 @@ export const StldHeader = styled.header`
         border: 2px solid rgba(39, 174, 96, 1);
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.52);
     }
+
 `;
